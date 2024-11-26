@@ -1,0 +1,19 @@
+{
+    "name": "almhdy/render-ease",
+    "description": "A lightweight PHP templating engine designed for simplicity and efficiency in MVC frameworks. Easily integrate dynamic views with a straightforward syntax, providing flexible rendering with variable management and basic control structures.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Almhdy\\RenderEase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "almhdy24",
+            "email": "almhdybdallh24@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
