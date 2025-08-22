@@ -1,58 +1,27 @@
 {
-  "name": "almhdy/render-ease",
-  "description": "A lightweight, high-performance PHP templating engine with component system, caching, and extensibility",
-  "type": "library",
-  "keywords": [
-    "templating",
-    "template-engine",
-    "php",
-    "components",
-    "caching",
-    "renderer",
-    "mvc",
-    "framework"
-  ],
-  "homepage": "https://github.com/almhdy24/render-ease",
-  "version": "1.0.0",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Almahdi",
-      "email": "almhdybdallh24@gmail.com",
-      "homepage": "https://github.com/almhdy24",
-      "role": "Developer"
+    "name": "almhdy/render-ease",
+    "description": "A lightweight PHP templating engine with component system and caching - Alpha Release",
+    "type": "library",
+    "version": "0.0.1-alpha",
+    "minimum-stability": "alpha",
+    "keywords": ["templating", "template-engine", "php", "alpha"],
+    "homepage": "https://github.com/almhdy24/render-ease",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "almhdy24",
+            "email": "almhdybdallh24@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Almhdy\\RenderEase\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Almhdy\\RenderEase\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Almhdy\\RenderEase\\Tests\\": "tests/"
-    }
-  },
-  "minimum-stability": "stable",
-  "require": {
-    "php": "^7.4 || ^8.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.5"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-main": "1.0-dev"
-    }
-  },
-  "support": {
-    "issues": "https://github.com/almhdy24/render-ease/issues",
-    "source": "https://github.com/almhdy24/render-ease"
-  },
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/almhdy24"
-    }
-  ]
 }
