@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title><?php echo $title; ?></title>
+    <meta charset="UTF-8">
+    <title>{{ title }} - My Website</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .header { background: #f0f0f0; padding: 20px; }
+        .content { margin: 20px 0; }
+        .footer { margin-top: 40px; padding: 20px; background: #f0f0f0; }
+    </style>
 </head>
 <body>
-<h1>Welcome, <?php echo $username; ?>!</h1>
-<p><?php echo $message; ?></p>
+    {{ include header }}
+    
+    <div class="content">
+        <h1>Welcome, {{ username }}!</h1>
+        <p>{{ message }}</p>
+        
+        {{ if items }}
+        <h2>Your Items:</h2>
+        <ul>
+            {{ for item in items }}
+            <li>{{ item }}</li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+    
+    {{ include footer with {show_date: true} }}
 </body>
 </html>

@@ -1,0 +1,6 @@
+<footer class="footer">
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+    {{ if show_date }}
+    <p>Page rendered at: {{ current_date }}</p>
+    {{ end }}
+</footer>
