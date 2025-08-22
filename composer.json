@@ -38,7 +38,7 @@
     "php": "^7.4 || ^8.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^9.5",
+    "phpunit/phpunit": "^9.5"
   },
   "extra": {
     "branch-alias": {
