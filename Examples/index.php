@@ -13,7 +13,7 @@ echo "=== Testing Cache Validation ===\n";
 try {
     $cacheManager = $renderer->getCacheManager();
     $cacheManager->enable(true);
-    $renderer->setCacheDirectory('../cache');
+    
     $cacheManager->validateCacheSetup(); // This should throw exception
     echo "ERROR: Should have thrown exception!\n";
 } catch (Exception $e) {
