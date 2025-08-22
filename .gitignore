@@ -1,1 +1,4 @@
 /vendor/
+vendor/
+cache/
+.phpunit.result.cache
