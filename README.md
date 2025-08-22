@@ -1,5 +1,4 @@
 # RenderEase
-
 **RenderEase** is a lightweight, high-performance PHP templating engine designed for simplicity and efficiency. It features a component-based architecture, file caching, and advanced control structures with a clean, intuitive syntax.
 
 ![PHP](https://img.shields.io/badge/PHP-^7.4||^8.0-777BB4?logo=php)
@@ -74,18 +73,20 @@ Variables:
 
 ```html
 <h1>Welcome, {{ username }}!</h1>
-<p>Your email: {{ email }}</p>
+<p>
+  Your email: {{ email }}
+</p>
 ```
 
 Conditionals:
 
 ```html
 {{ if items }}
-    <h2>You have items!</h2>
+<h2>You have items!</h2>
 {{ end }}
 
 {{ if user.is_admin }}
-    <a href="/admin">Admin Panel</a>
+<a href="/admin">Admin Panel</a>
 {{ end }}
 ```
 
@@ -93,10 +94,12 @@ Loops:
 
 ```html
 {{ for product in products }}
-    <div class="product">
-        <h3>{{ product.name }}</h3>
-        <p>${{ product.price }}</p>
-    </div>
+<div class="product">
+  <h3>{{ product.name }}</h3>
+  <p>
+    ${{ product.price }}
+  </p>
+</div>
 {{ end }}
 ```
 
@@ -111,9 +114,9 @@ Components:
 
 <!-- Conditional components -->
 {{ if user.logged_in }}
-    {{ include user_dashboard with {user: user} }}
+{{ include user_dashboard with {user: user} }}
 {{ else }}
-    {{ include login_form }}
+{{ include login_form }}
 {{ end }}
 ```
 
@@ -127,12 +130,12 @@ views/header.ease:
 
 ```html
 <header class="header">
-    <h1>{{ site_name }}</h1>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </nav>
+  <h1>{{ site_name }}</h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
 </header>
 ```
 
@@ -140,10 +143,14 @@ views/footer.ease:
 
 ```html
 <footer class="footer">
-    <p>&copy; {{ year }} {{ site_name }}. All rights reserved.</p>
-    {{ if show_date }}
-    <p>Page rendered at: {{ current_date }}</p>
-    {{ end }}
+  <p>
+    &copy; {{ year }} {{ site_name }}. All rights reserved.
+  </p>
+  {{ if show_date }}
+  <p>
+    Page rendered at: {{ current_date }}
+  </p>
+  {{ end }}
 </footer>
 ```
 
@@ -153,26 +160,34 @@ views/welcome.ease:
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ title }}</title>
-    <style>{{ include styles }}</style>
+  <title>{{ title }}</title>
+  <style>
+    {{
+      include styles
+    }}
+  </style>
 </head>
 <body>
-    {{ include header }}
-    
-    <main class="content">
-        <h1>Welcome, {{ username }}!</h1>
-        <p>{{ message }}</p>
-        
-        {{ if products }}
-        <div class="products">
-            {{ for product in products }}
-            <div class="product">{{ product.name }} - ${{ product.price }}</div>
-            {{ end }}
-        </div>
-        {{ end }}
-    </main>
-    
-    {{ include footer with {year: 2024, show_date: true} }}
+  {{ include header }}
+
+  <main class="content">
+    <h1>Welcome, {{ username }}!</h1>
+    <p>
+      {{ message }}
+    </p>
+
+    {{ if products }}
+    <div class="products">
+      {{ for product in products }}
+      <div class="product">
+        {{ product.name }} - ${{ product.price }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </main>
+
+  {{ include footer with {year: 2024, show_date: true} }}
 </body>
 </html>
 ```
@@ -210,16 +225,22 @@ Automatic HTML Escaping:
 
 ```html
 <!-- User input is automatically escaped -->
-<p>{{ user_generated_content }}</p>
+<p>
+  {{ user_generated_content }}
+</p>
 <!-- becomes -->
-<p><?php echo htmlspecialchars($user_generated_content, ENT_QUOTES, 'UTF-8'); ?></p>
+<p>
+  <?php echo htmlspecialchars($user_generated_content, ENT_QUOTES, 'UTF-8'); ?>
+</p>
 ```
 
 Raw Output (when needed):
 
 ```html
 <!-- Use carefully for trusted HTML content -->
-<div>{{ raw html_content }}</div>
+<div>
+  {{ raw html_content }}
+</div>
 ```
 
 ---
@@ -271,11 +292,11 @@ Error Handling:
 
 ```php
 try {
-    echo $renderer->render('template');
+echo $renderer->render('template');
 } catch (Almhdy\RenderEase\Exceptions\TemplateNotFoundException $e) {
-    echo "Template not found: " . $e->getMessage();
+echo "Template not found: " . $e->getMessage();
 } catch (Exception $e) {
-    echo "Error: " . $e->getMessage();
+echo "Error: " . $e->getMessage();
 }
 ```
 
@@ -337,30 +358,32 @@ Operation Time Improvement
 First Render ~18ms -
 Cached Render ~0.3ms 56x faster ⚡
 Memory Usage < 5MB Minimal footprint
-Components 0.1ms each Highly efficient
+  Components 0.1ms each Highly efficient
 
----
+  ---
 
-💡 Why Choose RenderEase?
+  💡 Why Choose RenderEase?
 
-· Simplicity: Clean syntax that's easy to learn and use
-· Performance: 56x faster with caching enabled
-· Security: Built-in HTML escaping and XSS protection
-· Flexibility: Component system for reusable code
-· Lightweight: No dependencies, minimal overhead
-· Professional: PSR-4 architecture, proper interfaces
+  · Simplicity: Clean syntax that's easy to learn and use
+  · Performance: 56x faster with caching enabled
+  · Security: Built-in HTML escaping and XSS protection
+  · Flexibility: Component system for reusable code
+  · Lightweight: No dependencies, minimal overhead
+  · Professional: PSR-4 architecture, proper interfaces
 
----
+  ---
 
-📞 Support
+  📞 Support
 
-If you have any questions or need help, please:
+  If you have any questions or need help, please:
 
-1. Check the Examples directory
-2. Open an Issue
-3. Email: almhdybdallh24@gmail.com
+  1. Check the Examples directory
+  2. Open an Issue
+  3. Email: almhdybdallh24@gmail.com
 
----
+  ---
 
-RenderEase - Making PHP templating simple, fast, and secure! 🚀
+  RenderEase - Making PHP templating simple, fast, and secure! 🚀
 
+  --- 
+  > **⚠️ Alpha Release**: This is v0.0.1-alpha - APIs may change, and there may be undiscovered issues. Not recommended for production use yet.
